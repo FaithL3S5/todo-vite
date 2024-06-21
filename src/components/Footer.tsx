@@ -1,5 +1,5 @@
-import { Box, Flex, IconButton, Link, Text } from "@chakra-ui/react";
-import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from "react-icons/fa";
+import { Box, Flex, IconButton, Text } from "@chakra-ui/react";
+import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -10,30 +10,10 @@ const Footer = () => {
             Faith_L3S5 Mundanity
           </Text>
           <Flex>
-            {/* <IconButton
-              as="a"
-              href="#"
-              aria-label="Facebook"
-              icon={<FaFacebook />}
-              variant="ghost"
-              color="white"
-              fontSize="20px"
-              mr={2}
-            />
             <IconButton
               as="a"
-              href="#"
-              aria-label="Twitter"
-              icon={<FaTwitter />}
-              variant="ghost"
-              color="white"
-              fontSize="20px"
-              mr={2}
-            /> */}
-            <IconButton
-              as="a"
-              href="#"
-              aria-label="Instagram"
+              href="https://github.com/FaithL3S5/todo-vite"
+              aria-label="Github"
               icon={<FaGithub />}
               variant="ghost"
               color="white"

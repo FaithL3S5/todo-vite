@@ -16,28 +16,32 @@ const TodoItem: React.FC<TodoItemProps> = ({
   deleteTodo,
   editTodo,
 }) => {
+  // State for handling edit mode and new text for editing
   const [isEditing, setIsEditing] = useState(false);
   const [newText, setNewText] = useState(todo.text);
 
+  // Function to handle edit mode and save changes
   const handleEdit = () => {
     if (isEditing && newText.trim() !== "") {
-      editTodo(todo.id, newText);
+      editTodo(todo.id, newText); // Call editTodo function to update text
     }
-    setIsEditing(!isEditing);
+    setIsEditing(!isEditing); // Toggle edit mode
   };
 
   return (
     <HStack spacing={4} align="center">
+      {/* Checkbox for completing todo */}
       <Checkbox
         isChecked={todo.completed}
         onChange={() => toggleComplete(todo.id)}
       />
+      {/* Display input field or text based on edit mode */}
       {isEditing ? (
         <Input
           value={newText}
           onChange={(e) => setNewText(e.target.value)}
           onKeyPress={(e) => {
-            if (e.key === "Enter") handleEdit();
+            if (e.key === "Enter") handleEdit(); // Handle edit on Enter key press
           }}
         />
       ) : (
@@ -45,6 +49,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
           {todo.text}
         </Text>
       )}
+      {/* Edit and Delete buttons */}
       <IconButton
         aria-label="Edit Todo"
         icon={isEditing ? <CheckIcon /> : <EditIcon />}
