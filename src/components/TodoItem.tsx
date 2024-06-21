@@ -45,7 +45,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
           }}
         />
       ) : (
-        <Text as={todo.completed ? "s" : ""} flex="1">
+        <Text as={todo.completed ? "s" : ("" as "s" | undefined)} flex="1">
           {todo.text}
         </Text>
       )}

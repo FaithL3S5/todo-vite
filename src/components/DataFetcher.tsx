@@ -8,6 +8,7 @@ import {
   Flex,
   HStack,
   Spinner,
+  ResponsiveValue,
 } from "@chakra-ui/react";
 import { useBreakpointValue } from "@chakra-ui/react";
 
@@ -53,9 +54,20 @@ const DataFetcher: React.FC = () => {
   };
 
   // Responsive design values based on breakpoints
-  const flexDirection = useBreakpointValue({ base: "column", md: "row" });
-  const alignItems = useBreakpointValue({ base: "flex-start", md: "center" });
-  const textAlign = useBreakpointValue({ base: "left", md: "center" });
+  const flexDirection = useBreakpointValue({
+    base: "column",
+    md: "row",
+  }) as ResponsiveValue<"row" | "column">;
+
+  const alignItems = useBreakpointValue({
+    base: "flex-start",
+    md: "center",
+  }) as ResponsiveValue<"flex-start" | "center">;
+
+  const textAlign = useBreakpointValue({
+    base: "left",
+    md: "center",
+  }) as ResponsiveValue<"left" | "center">;
 
   return (
     <VStack spacing={4} width="100%">
